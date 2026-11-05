@@ -18,6 +18,13 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+// Pre-generated Java from AIDL — zero AIDL compilation at platform build time
+filegroup {
+    name: "android.frameworks.location.altitude-V2-java-source",
+    srcs: ["aidl-gen/android.frameworks.location.altitude-V2-java-source/**/*.java"],
+    path: "aidl-gen/android.frameworks.location.altitude-V2-java-source",
+}
+
 aidl_interface {
     name: "android.frameworks.location.altitude",
     srcs: ["android/frameworks/location/altitude/*.aidl"],
@@ -26,7 +33,7 @@ aidl_interface {
     stability: "vintf",
     backend: {
         java: {
-            platform_apis: true,
+            enabled: false,
         },
         cpp: {
             enabled: false,
